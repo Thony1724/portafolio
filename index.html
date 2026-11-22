@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portafolio · Gestión de Educación para Adultos · Anthony Loyaga</title>
-  <meta name="description" content="Portafolio virtual de Anthony Alberto Loyaga Chávez — Maestría en Docencia Universitaria, Universidad César Vallejo. Experiencia curricular: Gestión de Educación para Adultos.">
+  <title>Portafolio · Gestión de Educación para Adultos · Grupo Ingeniería y Arquitectura</title>
+  <meta name="description" content="Portafolio virtual grupal (Ingeniería y Arquitectura) — Maestría en Docencia Universitaria, Universidad César Vallejo. Experiencia curricular: Gestión de Educación para Adultos.">
   <meta name="theme-color" content="#0b1f3a">
   <link rel="icon" href="assets/img/logo-ucv.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,11 +47,13 @@
           <span class="meta-item__value">Dra. María del Pilar Zavaleta Reyna de Ascoy</span>
         </div>
         <div class="meta-item">
-          <span class="meta-item__label">Maestrante</span>
-          <span class="meta-item__value">Ing. Anthony Alberto Loyaga Chávez</span>
+          <span class="meta-item__label">Integrantes</span>
+          <span class="meta-item__value">Hurtado Nuñez, Verónica Lourdes<br>Loyaga Chávez, Anthony Alberto<br>Piedra Olano, Guadalupe</span>
         </div>
         <div class="meta-item">
-          <span class="meta-item__label">Sede · Año</span>
+          <span class="meta-item__label">Grupo</span>
+          <span class="meta-item__value">Ingeniería y Arquitectura</span>
+          <span class="meta-item__label meta-item__label--gap">Sede · Año</span>
           <span class="meta-item__value">Trujillo · 2026</span>
         </div>
       </div>
@@ -61,30 +63,11 @@
   <main>
     <!-- ============================== PRESENTACIÓN -->
     <section class="profile-wrap" id="presentacion">
-      <article class="profile reveal">
-        <div class="profile__photo">
-          <img src="assets/img/foto.jpg" alt="Fotografía de Anthony Alberto Loyaga Chávez" id="fotoPerfil">
-          <span class="profile__initials" aria-hidden="true">AL</span>
-        </div>
-        <div class="profile__body">
-          <p class="eyebrow">Presentación</p>
-          <h2 class="profile__name">Anthony Alberto<br>Loyaga Chávez</h2>
-          <p class="profile__role">Ingeniero de Sistemas · Desarrollador de software</p>
-          <p class="profile__bio">
-            Soy ingeniero de sistemas y me dedico al desarrollo de software: diseño y construyo
-            soluciones tecnológicas que resuelven problemas reales de las organizaciones. Actualmente
-            curso la <strong>Maestría en Docencia Universitaria</strong> en la Universidad César Vallejo,
-            porque quiero llevar esa experiencia profesional al aula y formar a otros profesionales con
-            metodologías activas, centradas en el estudiante y apoyadas en la tecnología.
-          </p>
-          <ul class="tags">
-            <li>Ingeniería de Sistemas</li>
-            <li>Desarrollo de software</li>
-            <li>Docencia universitaria</li>
-            <li>Andragogía y TIC</li>
-          </ul>
-        </div>
-      </article>
+      <div class="group-head reveal">
+        <p class="eyebrow eyebrow--light">Presentación del equipo</p>
+        <p class="group-head__name">Grupo de Ingeniería y Arquitectura</p>
+      </div>
+      <div class="profiles" id="profiles"></div>
     </section>
 
     <!-- ============================== INTRODUCCIÓN -->
@@ -97,16 +80,16 @@
         <div class="intro reveal">
           <div class="intro__text">
             <p>
-              Este portafolio reúne las evidencias de aprendizaje que desarrollé en la experiencia curricular
-              <strong>Gestión de Educación para Adultos</strong>. Su propósito es mostrar cómo fui integrando los
+              Este portafolio reúne las evidencias de aprendizaje que desarrollamos como equipo en la experiencia curricular
+              <strong>Gestión de Educación para Adultos</strong>. Su propósito es mostrar cómo fuimos integrando los
               fundamentos de la andragogía (la experiencia previa, la autonomía, la necesidad de saber y la
               motivación intrínseca del adulto) con casos prácticos, foros de discusión y un trabajo colaborativo
               que culmina en un Plan de Mejora.
             </p>
             <p>
               Las evidencias están organizadas por semana. Cada semana corresponde a una capacidad del curso e
-              incluye una reflexión personal, mi participación en el foro, la práctica individual y la entrega del
-              producto colaborativo. Al final presento mis conclusiones y las referencias consultadas en formato APA.
+              incluye una reflexión, la participación de cada integrante en el foro, la actividad de la semana y el avance del
+              producto colaborativo. Al final presentamos nuestras conclusiones y las referencias consultadas en formato APA.
             </p>
           </div>
           <ol class="roadmap">
@@ -124,8 +107,8 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Desarrollo y evidencias</p>
-          <h2 class="section-title">Mi recorrido semana a semana</h2>
-          <p class="section-lead">Haz clic en cada tarjeta para leer mis respuestas a los foros o ver los documentos.</p>
+          <h2 class="section-title">Nuestro recorrido semana a semana</h2>
+          <p class="section-lead">Haz clic en cada tarjeta para leer nuestras respuestas a los foros o ver los documentos.</p>
         </div>
         <div class="weeks" id="weeks"></div>
       </div>
@@ -136,7 +119,7 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Conclusiones</p>
-          <h2 class="section-title">Lo que me llevo de este curso</h2>
+          <h2 class="section-title">Lo que nos llevamos de este curso</h2>
         </div>
         <div class="conclusions" id="conclusionsList"></div>
       </div>
@@ -158,7 +141,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <img src="assets/img/logo-ucv.png" alt="Universidad César Vallejo" class="footer__logo">
-      <p>Anthony Alberto Loyaga Chávez · Maestría en Docencia Universitaria · Gestión de Educación para Adultos – A3 · 2026</p>
+      <p>Hurtado Nuñez, Loyaga Chávez y Piedra Olano · Grupo de Ingeniería y Arquitectura · Maestría en Docencia Universitaria · Gestión de Educación para Adultos – A3 · 2026</p>
     </div>
   </footer>
 

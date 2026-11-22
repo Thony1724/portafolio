@@ -15,7 +15,48 @@
     external: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>'
   };
 
-  var ETIQUETA = { foro: "Foro", practica: "Práctica", colaborativo: "Producto colaborativo" };
+  var ETIQUETA = { foro: "Foro", practica: "Actividad", colaborativo: "Producto colaborativo" };
+
+  /* ---------------------------------------------------------- Integrantes */
+  function miembro(id) { return D.integrantes.filter(function (m) { return m.id === id; })[0]; }
+
+  function avatarInner(m) {
+    return m.foto
+      ? '<img src="' + m.foto + '" alt="" loading="lazy">'
+      : "<span>" + esc(m.iniciales) + "</span>";
+  }
+
+  function renderIntegrantes() {
+    $("#profiles").innerHTML = D.integrantes.map(function (m) {
+      var partes = m.nombre.split(" ");
+      var corte = Math.ceil(partes.length / 2);
+      var nombre = esc(partes.slice(0, corte).join(" ")) + "<br>" + esc(partes.slice(corte).join(" "));
+      return (
+        '<article class="profile reveal" id="integrante-' + m.id + '">' +
+          '<div class="profile__photo' + (m.foto ? "" : " no-photo") + '">' +
+            (m.foto ? '<img src="' + m.foto + '" alt="Fotografía de ' + esc(m.nombre) + '">' : "") +
+            '<span class="profile__initials" aria-hidden="true">' + esc(m.iniciales) + "</span>" +
+            (m.foto ? "" : '<span class="profile__pending">Foto pendiente</span>') +
+          "</div>" +
+          '<div class="profile__body">' +
+            '<p class="eyebrow">Integrante</p>' +
+            '<h2 class="profile__name">' + nombre + "</h2>" +
+            '<p class="profile__role">' + esc(m.carrera) + "</p>" +
+            (m.bio
+              ? '<p class="profile__bio">' + m.bio + "</p>"
+              : '<p class="profile__bio profile__bio--pending">Descripción pendiente.</p>') +
+            '<ul class="tags">' + m.tags.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" +
+          "</div>" +
+        "</article>"
+      );
+    }).join("");
+    // Si una foto no carga, se muestran las iniciales
+    Array.prototype.forEach.call(document.querySelectorAll(".profile__photo img"), function (img) {
+      var falla = function () { img.parentNode.classList.add("no-photo"); };
+      img.addEventListener("error", falla);
+      if (img.complete && !img.naturalWidth) falla();
+    });
+  }
 
   function esc(t) {
     return String(t).replace(/[&<>"']/g, function (c) {
@@ -34,7 +75,12 @@
       titulo = f ? "Foro " + f.numero : (ev.titulo || "Foro");
       desc = f ? f.titulo : "Por desarrollar.";
       attrs = f ? 'data-foro="' + ev.foro + '"' : "";
-      cta = "Leer mi respuesta";
+      cta = "Leer respuestas";
+      if (f) {
+        formato = '<span class="avatars">' + D.integrantes.filter(function (m) { return f.respuestas[m.id]; }).map(function (m) {
+          return '<span class="avatar avatar--sm" title="' + esc(m.nombre) + '">' + avatarInner(m) + "</span>";
+        }).join("") + "</span>";
+      }
     } else {
       pendiente = !ev.pdf && !ev.word;
       titulo = ev.titulo;
@@ -76,6 +122,10 @@
               '<p class="week__label">Semana ' + s.numero + ' <span class="pill">Capacidad ' + s.capacidad + "</span>" +
               (s.enDesarrollo ? ' <span class="pill pill--soft">En desarrollo</span>' : "") + "</p>" +
               '<h3 class="week__title">' + esc(s.titulo) + "</h3>" +
+              (s.descripcionCapacidad
+                ? '<p class="week__capacity"><strong>Capacidad ' + s.capacidad + ":</strong> " + esc(s.descripcionCapacidad) +
+                  (s.sesiones ? ' <span class="week__sessions">' + esc(s.sesiones) + "</span>" : "") + "</p>"
+                : "") +
             "</header>" +
             '<div class="week__reflection">' +
               (s.enDesarrollo ? "" : '<p class="week__reflection-label">Reflexión de la semana</p>') +
@@ -132,7 +182,32 @@
     var f = D.foros[id];
     $("#foroKicker").textContent = "Foro " + f.numero;
     $("#foroTitulo").textContent = f.titulo;
-    $("#foroFecha").textContent = f.fecha;
+    var conRespuesta = D.integrantes.filter(function (m) { return f.respuestas[m.id]; });
+    $("#foroFecha").textContent = conRespuesta.length + (conRespuesta.length === 1 ? " respuesta del equipo" : " respuestas del equipo");
+
+    var tabs = '<div class="tabs" role="tablist" aria-label="Respuestas por integrante">' +
+      D.integrantes.map(function (m, i) {
+        var r = f.respuestas[m.id];
+        return '<button class="tab' + (i === 0 ? " is-active" : "") + (r ? "" : " tab--pending") + '" role="tab" type="button"' +
+          ' data-tab="' + m.id + '" aria-selected="' + (i === 0) + '">' +
+          '<span class="avatar">' + avatarInner(m) + "</span>" +
+          '<span class="tab__text"><strong>' + esc(m.nombreCorto) + "</strong><small>" + (r ? esc(r.fecha) : "Pendiente") + "</small></span>" +
+        "</button>";
+      }).join("") + "</div>";
+
+    var paneles = D.integrantes.map(function (m, i) {
+      var r = f.respuestas[m.id];
+      var cuerpo = r
+        ? '<div class="answer">' + r.parrafos.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>" +
+          (r.referencias && r.referencias.length
+            ? '<div class="answer__refs"><p class="answer__refs-title">Referencias</p><ul>' +
+                r.referencias.map(function (k) { return "<li>" + refHTML(D.referencias[k]) + "</li>"; }).join("") +
+              "</ul></div>"
+            : "")
+        : '<div class="answer answer--pending"><p>La respuesta de ' + esc(m.nombre) + " se agregará pronto.</p></div>";
+      return '<div class="tab-panel" role="tabpanel" data-panel="' + m.id + '"' + (i === 0 ? "" : " hidden") + ">" + cuerpo + "</div>";
+    }).join("");
+
     var html =
       '<details class="prompt">' +
         "<summary><span>Consigna del foro</span><small>Ver contexto y pregunta</small></summary>" +
@@ -144,14 +219,7 @@
             }).join("") +
           "</div>" +
         "</div>" +
-      "</details>" +
-      '<div class="answer">' +
-        '<div class="answer__author"><span class="answer__avatar">AL</span><div><strong>Anthony Alberto Loyaga Chávez</strong><small>Mi respuesta</small></div></div>' +
-        f.respuesta.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
-      "</div>" +
-      '<div class="answer__refs"><p class="answer__refs-title">Referencias</p><ul>' +
-        f.referencias.map(function (k) { return "<li>" + refHTML(D.referencias[k]) + "</li>"; }).join("") +
-      "</ul></div>";
+      "</details>" + tabs + paneles;
     $("#foroBody").innerHTML = html;
     $("#foroBody").scrollTop = 0;
     abrir($("#modalForo"));
@@ -189,8 +257,18 @@
 
   function initModales() {
     document.addEventListener("click", function (e) {
-      var t = e.target.closest("[data-foro],[data-doc],[data-close]");
+      var t = e.target.closest("[data-foro],[data-doc],[data-close],[data-tab]");
       if (!t) return;
+      if (t.hasAttribute("data-tab")) {
+        var id = t.getAttribute("data-tab"), body = $("#foroBody");
+        Array.prototype.forEach.call(body.querySelectorAll("[data-tab]"), function (b) {
+          var on = b === t; b.classList.toggle("is-active", on); b.setAttribute("aria-selected", on);
+        });
+        Array.prototype.forEach.call(body.querySelectorAll("[data-panel]"), function (p) {
+          p.hidden = p.getAttribute("data-panel") !== id;
+        });
+        return;
+      }
       if (t.hasAttribute("data-foro")) abrirForo(t.getAttribute("data-foro"));
       else if (t.hasAttribute("data-doc")) abrirDoc(t.getAttribute("data-doc"));
       else cerrar(t.closest("dialog"));
@@ -219,14 +297,6 @@
     onScroll();
   }
 
-  /* ---------------------------------------------------------- Foto de perfil */
-  function initFoto() {
-    var img = $("#fotoPerfil");
-    var falla = function () { img.closest(".profile__photo").classList.add("no-photo"); };
-    img.addEventListener("error", falla);
-    if (img.complete && !img.naturalWidth) falla();
-  }
-
   /* ---------------------------------------------------------- Aparición al hacer scroll */
   function initReveal() {
     var els = document.querySelectorAll(".reveal");
@@ -242,11 +312,11 @@
     Array.prototype.forEach.call(els, function (el) { io.observe(el); });
   }
 
+  renderIntegrantes();
   renderSemanas();
   renderConclusiones();
   renderReferencias();
   initModales();
   initNav();
-  initFoto();
   initReveal();
 })();
