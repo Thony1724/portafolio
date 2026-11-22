@@ -37,7 +37,7 @@ window.PORTAFOLIO = {
       nombre: "Verónica Lourdes Hurtado Nuñez",
       nombreCorto: "Verónica Hurtado",
       iniciales: "VH",
-      foto: null,
+      foto: "assets/img/veronica.jpg",
       carrera: "Ingeniera Industrial",
       bio: null, // ← pegar aquí su descripción
       tags: ["Ingeniería Industrial", "Docencia universitaria"]
