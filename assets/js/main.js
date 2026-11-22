@@ -191,7 +191,7 @@
         return '<button class="tab' + (i === 0 ? " is-active" : "") + (r ? "" : " tab--pending") + '" role="tab" type="button"' +
           ' data-tab="' + m.id + '" aria-selected="' + (i === 0) + '">' +
           '<span class="avatar">' + avatarInner(m) + "</span>" +
-          '<span class="tab__text"><strong>' + esc(m.nombreCorto) + "</strong><small>" + (r ? esc(r.fecha) : "Pendiente") + "</small></span>" +
+          '<span class="tab__text"><strong>' + esc(m.nombreCorto) + "</strong><small>" + (r ? esc(r.fecha || "Respuesta publicada") : "Pendiente") + "</small></span>" +
         "</button>";
       }).join("") + "</div>";
 
@@ -199,6 +199,14 @@
       var r = f.respuestas[m.id];
       var cuerpo = r
         ? '<div class="answer">' + r.parrafos.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>" +
+          (r.replicas && r.replicas.length
+            ? '<div class="replies"><p class="replies__title">Réplicas a compañeros</p>' +
+                r.replicas.map(function (rp) {
+                  return '<div class="reply"><p class="reply__to">' + esc(rp.a) + "</p>" +
+                    rp.parrafos.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>";
+                }).join("") +
+              "</div>"
+            : "") +
           (r.referencias && r.referencias.length
             ? '<div class="answer__refs"><p class="answer__refs-title">Referencias</p><ul>' +
                 r.referencias.map(function (k) { return "<li>" + refHTML(D.referencias[k]) + "</li>"; }).join("") +

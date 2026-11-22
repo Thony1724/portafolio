@@ -408,6 +408,14 @@ p:last-child { margin-bottom: 0; }
 .tab--pending { opacity: .6; }
 .tab--pending .avatar { background: #aab3c2; }
 .answer--pending { color: var(--muted); font-style: italic; padding: 1rem 0; }
+.replies { margin-top: 1.6rem; display: grid; gap: .8rem; }
+.replies__title { font-weight: 700; color: var(--navy); margin: 0 0 .2rem !important; }
+.reply {
+  border-left: 3px solid var(--navy-600); background: #f6f8fc; border-radius: 0 12px 12px 0;
+  padding: .9rem 1.1rem; font-size: .96rem; color: #3a4352;
+}
+.reply p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.reply__to { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--navy-600); margin-bottom: .4rem !important; }
 @media (max-width: 760px) {
   .tabs { flex-wrap: nowrap; overflow-x: auto; margin-left: -1.1rem; margin-right: -1.1rem; padding: 0 1.1rem 1rem; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }

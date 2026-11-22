@@ -39,8 +39,8 @@ window.PORTAFOLIO = {
       iniciales: "VH",
       foto: "assets/img/veronica.jpg",
       carrera: "Ingeniera Industrial",
-      bio: null, // ← pegar aquí su descripción
-      tags: ["Ingeniería Industrial", "Docencia universitaria"]
+      bio: "Ingeniera industrial de profesión, con trayectoria en el sector comercial, especializada en la venta de productos, soluciones y suministros para los sectores minero e industrial. Cuento con una visión integral del negocio gracias a mi experiencia como proveedora directa de la minería y la industria, y a mi gestión al frente de una empresa contratista, donde lideré la ejecución de contratos de fabricación para compañías de prestigio. Hoy, mi principal motivación es volcar toda esta experiencia real de campo, gestión y negociación hacia la <strong>docencia universitaria</strong>.",
+      tags: ["Ingeniería Industrial", "Sector minero e industrial", "Gestión comercial", "Docencia universitaria"]
     }
   ],
 
@@ -210,6 +210,27 @@ window.PORTAFOLIO = {
             "En conclusión, una educación basada en el respeto, el diálogo y la reflexión permite que los adultos sean más independientes, críticos y responsables, tanto en su vida personal como en su entorno laboral y social."
           ],
           referencias: ["freire", "knowles2015"]
+        },
+        veronica: {
+          fecha: null,
+          parrafos: [
+            "Compañeros, desde mi punto de vista, la formación de adultos solo cobra verdadero sentido cuando rompemos con el esquema tradicional de la clase magistral, donde uno solo se limita a recibir información de forma pasiva. Como señalaba Paulo Freire, la educación debe dejar de ser una “educación bancaria” para transformarse en un diálogo horizontal y cuestionar la realidad. Cuando en el trabajo o en la universidad nos dan espacio para reflexionar directamente sobre nuestra propia experiencia, el conocimiento deja de ser algo abstracto: se convierte en una herramienta presente y viva que nos permite tomar conciencia de nuestro rol, pensar críticamente y actuar con total autonomía ética."
+          ],
+          replicas: [
+            {
+              a: "Réplica a una compañera",
+              parrafos: ["Estimada compañera, coincido en que, cuando se construye un entorno de seguridad donde el error deja de ser juzgado para convertirse en objeto de análisis del grupo, el adulto experimenta un respeto real por su trayectoria; es precisamente en ese diálogo horizontal y honesto entre pares donde se confrontan los saberes previos, se desvirtúan las diferencias y se consolida un pensamiento crítico auténtico, orientado a transformar la práctica profesional."]
+            },
+            {
+              a: "Réplica a una compañera",
+              parrafos: ["Compañera, respecto a la autonomía, concuerdo en que ser autónomo no significa hacer lo que uno quiera, sino aprender a tomar decisiones con responsabilidad y asumir sus consecuencias; la verdadera autonomía implica conciencia ética, entender que cada elección impacta el desenvolvimiento profesional y estar dispuestos a reflexionar de forma autocrítica sobre los resultados para seguir aprendiendo."]
+            },
+            {
+              a: "Réplica a una compañera",
+              parrafos: ["De acuerdo contigo, compañera: en el aprendizaje de adultos es necesario un ambiente en el que el alumno sea el protagonista de su propio proceso y tenga la capacidad de gestionar y analizar sus propios conocimientos. Este protagonismo no se origina de la nada; se basa en su propia trayectoria vivida y se fortalece cuando el conocimiento pasa de ser algo abstracto a convertirse en una herramienta concreta, que sirve para enfrentar los verdaderos retos de su vida profesional."]
+            }
+          ],
+          referencias: ["freire1970"]
         }
       }
     },
@@ -242,6 +263,30 @@ window.PORTAFOLIO = {
             "Según la segunda pregunta, considero que las prácticas educativas responden parcialmente a los principios andragógicos, porque todavía predominan clases expositivas y evaluaciones memorísticas que limitan la participación del estudiante. Para fortalecer este modelo, propongo implementar el aprendizaje basado en problemas, proyectos relacionados con experiencias laborales, trabajo colaborativo, herramientas digitales e inteligencia artificial, así como evaluaciones formativas mediante autoevaluación y coevaluación. Estas estrategias favorecen la autonomía y la participación activa, en concordancia con Zainuddin et al. (2024), quienes resaltan la importancia del aprendizaje independiente y el intercambio de experiencias. Así, el docente debe asumir el papel de facilitador y promotor de aprendizajes significativos aplicables a la vida profesional y social."
           ],
           referencias: ["acosta", "zainuddin"]
+        },
+        veronica: {
+          fecha: null,
+          parrafos: [
+            "La andragogía que ideó Malcolm Knowles es de amplio conocimiento como modelo eficaz en la formación de adultos motivados y experimentados. Sin embargo, la propia literatura científica señala la insatisfacción con un modelo que no es infalible ni generalizable (Merriam, 2001). Las principales limitaciones surgen cuando las suposiciones teóricas que lo sostienen (autodirección, saberes previos, motivación intrínseca) no se verifican en la realidad del aula o con el tipo de disciplina que se estudia (Pratt, 1993).",
+            "El enfoque andragógico asume una autonomía cognitiva y conductual que muchos estudiantes adultos en realidad no poseen. Alcanzar la mayoría de edad biológica o social no garantiza el dominio de estrategias cognitivas ni de autorregulación del aprendizaje (Grow, 1991). Numerosos estudiantes universitarios y profesionales, acostumbrados durante décadas a esquemas de enseñanza pedagógica, experimentan desorientación, ansiedad y baja productividad cuando el docente adopta exclusivamente el rol de facilitador y omite pautas estructuradas (Candy, 1991). Esta ausencia de andamiaje y supervisión cercana suele traducirse en altos índices de procrastinación y deserción académica, un fenómeno ampliamente documentado en entornos de educación virtual y programas autogestionados donde se presupone una autogestión plena desde el inicio (Lee y Choi, 2011).",
+            "En segundo lugar, la experiencia previa del estudiante representa un obstáculo crítico cuando dicho bagaje es inexistente o conceptualmente erróneo. Desde la psicología cognitiva y la teoría de la carga cognitiva, cuando un adulto aborda un dominio completamente nuevo y complejo, como un profesional de las humanidades que se inicia en programación o en finanzas, carece de esquemas mentales previos sobre los cuales anclar la nueva información, por lo que la instrucción directa y guiada resulta significativamente más eficaz que el aprendizaje por descubrimiento o el debate entre pares (Kirschner et al., 2006). Asimismo, la experiencia acumulada no siempre actúa como un recurso facilitador; con frecuencia conlleva sesgos cognitivos, hábitos profesionales arraigados y resistencia al cambio que obstaculizan la asimilación de paradigmas más rigurosos, lo que exige procesos previos de desaprendizaje crítico antes de construir nuevos saberes (Brookfield, 1986; Mezirow, 1991).",
+            "¿De qué manera se podría combinar la enseñanza tradicional en los primeros ciclos con métodos andragógicos en los últimos ciclos para ayudar a corregir las debilidades del aprendizaje de adultos en la universidad?"
+          ],
+          replicas: [
+            {
+              a: "Réplica a Milagros",
+              parrafos: ["Cierto, Milagros, respecto al reto de sobrellevar la vida académica y personal; por ello se propone el aprendizaje autónomo por etapas de Grow (1991) y el acompañamiento paso a paso conocido como andamiaje de Wood et al. (1976). Sabemos que, cuando un adulto se enfrenta por primera vez a teorías difíciles o a herramientas digitales que no conoce, no tiene una base previa que le permita avanzar solo; en ese inicio, necesita que el profesor le explique con claridad y le muestre cómo hacerlo para no frustrarse ni saturarse de información (Kirschner et al., 2006; Sweller et al., 2011). Pero mantener ese control todo el tiempo tampoco sirve, porque trata al adulto como a un niño y frena su capacidad de pensar por sí mismo. Por eso, dividir el aprendizaje en etapas, empezando con mucha guía y terminando con total independencia, permite apoyar al estudiante que recién comienza sin frenar al que ya está listo, logrando que desarrolle una autonomía real para su vida profesional."]
+            },
+            {
+              a: "Réplica a Kiara",
+              parrafos: ["Estimada Kiara, estoy de acuerdo contigo; además, pienso que en la educación universitaria actual seguir separando de forma estricta la pedagogía de la andragogía no tiene mucho sentido práctico y hasta puede perjudicar a los estudiantes adultos. En el día a día de las aulas, dar por hecho que una persona, solo por ser mayor de edad, ya sabe estudiar por su cuenta o maneja bien la tecnología suele terminar en desmotivación, abandono de cursos o aprendizajes muy por encima. Por eso, creo que lo más sensato y realista hoy en día es apostar por un modelo híbrido que combine la guía clara y ordenada de la enseñanza tradicional con la libertad práctica de la andragogía. Este enfoque no se trata de mezclar actividades sin rumbo, sino de ir soltando poco a poco el control de la clase: empezar acompañando de cerca al estudiante y darle cada vez más autonomía a medida que domina los temas y se siente seguro usando las herramientas digitales (Garrison, 1997; Merriam, 2001)."]
+            },
+            {
+              a: "Réplica a María Elizabeth",
+              parrafos: ["De acuerdo contigo, María Elizabeth: en la actualidad, el dominio tecnológico en la educación superior y continua trasciende ampliamente el manejo de paquetes ofimáticos básicos o la simple navegación por internet; por el contrario, exige que el estudiante desarrolle un conjunto integral de capacidades técnicas, cognitivas, comunicativas y éticas para aprender de forma autónoma y desempeñarse con solvencia en entornos profesionales digitalizados (Ferrari, 2013; Ng, 2012)."]
+            }
+          ],
+          referencias: ["brookfield", "candy", "ferrari", "garrison", "grow", "kirschner", "lee", "merriam", "mezirow", "ng", "pratt", "sweller", "wood"]
         }
       }
     },
@@ -308,6 +353,62 @@ window.PORTAFOLIO = {
     ardila: {
       texto: "Ardila García, A. K. (2023). La motivación en contextos educativos andragógicos. <em>Gaceta Pedagogía y Educación</em>, 138–141.",
       url: null
+    },
+    brookfield: {
+      texto: "Brookfield, S. D. (1986). <em>Understanding and facilitating adult learning</em>. Jossey-Bass.",
+      url: null
+    },
+    candy: {
+      texto: "Candy, P. C. (1991). <em>Self-direction for lifelong learning: A comprehensive guide to theory and practice</em>. Jossey-Bass.",
+      url: null
+    },
+    ferrari: {
+      texto: "Ferrari, A. (2013). <em>DIGCOMP: A framework for developing and understanding digital competence in Europe</em>. Publications Office of the European Union.",
+      url: "https://doi.org/10.2788/52966"
+    },
+    freire1970: {
+      texto: "Freire, P. (2005). <em>Pedagogía del oprimido</em> (2.ª ed.). Siglo XXI Editores. (Obra original publicada en 1970)",
+      url: null
+    },
+    garrison: {
+      texto: "Garrison, D. R. (1997). Self-directed learning: Toward a comprehensive model. <em>Adult Education Quarterly, 48</em>(1), 18–33.",
+      url: "https://doi.org/10.1177/074171369704800103"
+    },
+    grow: {
+      texto: "Grow, G. O. (1991). Teaching learners to be self-directed. <em>Adult Education Quarterly, 41</em>(3), 125–149.",
+      url: "https://doi.org/10.1177/0001848191041003001"
+    },
+    kirschner: {
+      texto: "Kirschner, P. A., Sweller, J., y Clark, R. E. (2006). Why minimal guidance during instruction does not work: An analysis of the failure of constructivist, discovery, problem-based, experiential, and inquiry-based teaching. <em>Educational Psychologist, 41</em>(2), 75–86.",
+      url: "https://doi.org/10.1207/s15326985ep4102_1"
+    },
+    lee: {
+      texto: "Lee, Y., y Choi, J. (2011). A review of online course dropout research: Implications for practice and future research. <em>Educational Technology Research and Development, 59</em>(5), 593–618.",
+      url: "https://doi.org/10.1007/s11423-010-9177-y"
+    },
+    merriam: {
+      texto: "Merriam, S. B. (2001). Andragogy and self-directed learning: Pillars of adult learning theory. <em>New Directions for Adult and Continuing Education, 2001</em>(89), 3–14.",
+      url: "https://doi.org/10.1002/ace.3"
+    },
+    mezirow: {
+      texto: "Mezirow, J. (1991). <em>Transformative dimensions of adult learning</em>. Jossey-Bass.",
+      url: null
+    },
+    ng: {
+      texto: "Ng, W. (2012). Can we teach digital natives digital literacy? <em>Computers &amp; Education, 59</em>(3), 1065–1078.",
+      url: "https://doi.org/10.1016/j.compedu.2012.04.016"
+    },
+    pratt: {
+      texto: "Pratt, D. D. (1993). Andragogy after twenty-five years. <em>New Directions for Adult and Continuing Education, 1993</em>(57), 15–23.",
+      url: null
+    },
+    sweller: {
+      texto: "Sweller, J., Ayres, P., y Kalyuga, S. (2011). <em>Cognitive load theory</em>. Springer.",
+      url: "https://doi.org/10.1007/978-1-4419-8126-4"
+    },
+    wood: {
+      texto: "Wood, D., Bruner, J. S., y Ross, G. (1976). The role of tutoring in problem solving. <em>Journal of Child Psychology and Psychiatry, 17</em>(2), 89–100.",
+      url: "https://doi.org/10.1111/j.1469-7610.1976.tb00381.x"
     },
     bisquerra: {
       texto: "Bisquerra Alzina, R. (2003). Educación emocional y competencias básicas para la vida. <em>Revista de Investigación Educativa, 21</em>(1), 7–43.",
