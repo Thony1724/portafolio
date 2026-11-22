@@ -143,34 +143,24 @@ window.PORTAFOLIO = {
       titulo: "Plan de Mejora con enfoque andragógico",
       descripcionCapacidad: "Diseñan una sesión de intervención del Plan de Mejora (taller) incorporando estrategias andragógicas efectivas centradas en los estudiantes.",
       sesiones: "Sesiones 7 y 8",
-      enDesarrollo: true,
       reflexion: [
-        "Esta semana está en desarrollo. Aquí se presentará el Plan de Mejora con enfoque andragógico y la entrega final del producto colaborativo."
-      ],
-      plan: [
-        "Problema identificado",
-        "Causas",
-        "Metas",
-        "Acciones",
-        "Responsables",
-        "Recursos",
-        "Indicadores",
-        "Seguimiento"
+        "En esta última semana pasamos del análisis a la acción: diseñamos un Plan de Mejora para la gestión curricular en la formación universitaria de adultos. Comprendimos que un plan de mejora parte de necesidades identificadas y establece objetivos, estrategias, recursos y mecanismos de seguimiento y evaluación. Para darle coherencia, nos apoyamos en el alineamiento constructivo de Biggs (1996), que exige una relación clara entre los resultados de aprendizaje previstos, las actividades que realizan los estudiantes y la forma de evaluarlos.",
+        "Como estrategia andragógica central elegimos el microaprendizaje: organizar los contenidos en unidades breves, con un propósito concreto y una secuencia intencional (Alias y Abdul Razak, 2023), que el adulto puede trabajar a su propio ritmo y desde el móvil, compatibilizando sus estudios con sus responsabilidades laborales y familiares (Moore et al., 2024; Yao y Ho, 2025). Así, el Plan de Mejora integra lo aprendido durante el curso: respeta la autonomía y la experiencia del estudiante adulto, le muestra la utilidad inmediata de lo que aprende y lo acompaña con seguimiento y retroalimentación."
       ],
       evidencias: [
         {
           tipo: "practica",
-          titulo: "Actividad de la semana 4",
-          descripcion: "Por desarrollar.",
-          pdf: null,
+          titulo: "Plan de Mejora · Ingeniería",
+          descripcion: "Plan de Mejora con enfoque andragógico y su sesión de intervención (taller) para estudiantes de ingeniería.",
+          pdf: "docs/semana-4/plan-de-mejora.pdf",
           word: null
         },
         {
           tipo: "colaborativo",
           titulo: "Cuarto avance del producto colaborativo",
-          descripcion: "Informe académico final y Plan de Mejora.",
-          pdf: null,
-          word: null
+          descripcion: "Informe académico final: incluye el plan de mejora de la gestión curricular mediante microaprendizaje y estrategias andragógicas.",
+          pdf: "docs/semana-4/cuarto-avance.pdf",
+          word: "docs/semana-4/cuarto-avance.docx"
         }
       ]
     }
@@ -409,6 +399,22 @@ window.PORTAFOLIO = {
     wood: {
       texto: "Wood, D., Bruner, J. S., y Ross, G. (1976). The role of tutoring in problem solving. <em>Journal of Child Psychology and Psychiatry, 17</em>(2), 89–100.",
       url: "https://doi.org/10.1111/j.1469-7610.1976.tb00381.x"
+    },
+    alias: {
+      texto: "Alias, N. F., y Abdul Razak, R. (2023). Exploring the pedagogical aspects of microlearning in educational settings: A systematic literature review. <em>Malaysian Journal of Learning and Instruction, 20</em>(2), 267–294.",
+      url: "https://doi.org/10.32890/mjli2023.20.2.3"
+    },
+    biggs: {
+      texto: "Biggs, J. (1996). Enhancing teaching through constructive alignment. <em>Higher Education, 32</em>, 347–364.",
+      url: "https://doi.org/10.1007/BF00138871"
+    },
+    moore: {
+      texto: "Moore, R. L., Hwang, W., y Moses, J. D. (2024). A systematic review of mobile-based microlearning in adult learner contexts. <em>Educational Technology &amp; Society, 27</em>(1), 137–146.",
+      url: "https://doi.org/10.30191/ETS.202401_27(1).SP02"
+    },
+    yao: {
+      texto: "Yao, S.-Y., y Ho, Y. Y. (2025). Evaluating the usefulness of microlearning to adult students in higher education: An empirical study in Singapore. <em>Adult Learning, 36</em>(3), 162–175.",
+      url: "https://doi.org/10.1177/10451595241280672"
     },
     bisquerra: {
       texto: "Bisquerra Alzina, R. (2003). Educación emocional y competencias básicas para la vida. <em>Revista de Investigación Educativa, 21</em>(1), 7–43.",
